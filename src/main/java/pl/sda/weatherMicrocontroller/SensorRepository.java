@@ -1,6 +1,8 @@
 package pl.sda.weatherMicrocontroller;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface SensorRepository extends CrudRepository<Sensor, String> {
+@Repository
+public interface SensorRepository extends MongoRepository<Sensor, String> {
 }
