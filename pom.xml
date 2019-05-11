@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>pl.sda</groupId>
-    <artifactId>pogodynka-mikrokontroler</artifactId>
+    <artifactId>weather-microcontroller</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>pogodynka-mikrokontroler</name>
+    <name>weather-microcontroller</name>
     <description>Final project for Spring Boot</description>
 
     <properties>

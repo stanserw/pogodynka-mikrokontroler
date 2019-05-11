@@ -42,4 +42,9 @@ public class SensorController {
         sensorRepository.deleteById(id);
     }
 
+    @DeleteMapping
+    public void deleteAllSensors(){
+        sensorRepository.deleteAll();
+    }
+
 }
