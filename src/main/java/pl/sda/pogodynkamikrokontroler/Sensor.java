@@ -5,8 +5,7 @@ import java.time.LocalDate;
 public class Sensor implements Sensorable{
 
     private long id;
-    private double temperature;
-    private double humidity;
+    private SensorData sensorData;
     private LocalDate localDate;
     private SensorType sensorType;
 

@@ -1,5 +1,5 @@
 package pl.sda.pogodynkamikrokontroler;
 
 public enum SensorType {
-    INTERNAL, EXTERNAL
+    INTERNAL, EXTERNAL, INTERNALEXTERNAL
 }
