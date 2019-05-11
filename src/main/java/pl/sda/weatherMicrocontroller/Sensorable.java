@@ -1,4 +1,4 @@
-package pl.sda.pogodynkamikrokontroler;
+package pl.sda.weatherMicrocontroller;
 
 public interface Sensorable {
 

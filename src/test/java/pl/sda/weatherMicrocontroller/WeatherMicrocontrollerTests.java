@@ -1,4 +1,4 @@
-package pl.sda.pogodynkamikrokontroler;
+package pl.sda.weatherMicrocontroller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PogodynkaMikrokontrolerApplicationTests {
+public class WeatherMicrocontrollerTests {
 
     @Test
     public void contextLoads() {
