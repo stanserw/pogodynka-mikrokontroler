@@ -1,8 +1,7 @@
 package pl.sda.weatherMicrocontroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(SensorController.API_SENSOR_PATH)
@@ -16,6 +15,19 @@ public class SensorController {
     @Autowired
     public SensorController(SensorRepository sensorRepository) {
         this.sensorRepository = sensorRepository;
+    }
+
+    /**
+     * Tworzymy metode do zapisywania
+     */
+    @PostMapping
+    public void sensor(@RequestBody Sensor sensor) {
+        sensorRepository.save(sensor);
+    }
+
+    @GetMapping
+    public Iterable<Sensor> getSensor() {
+        return sensorRepository.findAll();
     }
 
 }
