@@ -1,4 +1,4 @@
-package pl.sda.weatherMicrocontroller.model;
+package pl.sda.weathermicrocontroller.model;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

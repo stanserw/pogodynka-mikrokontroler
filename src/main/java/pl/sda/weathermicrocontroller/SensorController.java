@@ -1,7 +1,9 @@
-package pl.sda.weatherMicrocontroller;
+package pl.sda.weathermicrocontroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping(SensorController.API_SENSOR_PATH)
@@ -21,13 +23,23 @@ public class SensorController {
      * Tworzymy metode do zapisywania
      */
     @PostMapping
-    public void sensor(@RequestBody Sensor sensor) {
+    public void Sensor(@RequestBody Sensor sensor) {
         sensorRepository.save(sensor);
     }
 
     @GetMapping
-    public Iterable<Sensor> getSensor() {
+    public Iterable<Sensor> getAllSensors() {
         return sensorRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Sensor> getOneSensor(@PathVariable String id) {
+        return sensorRepository.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteOneSensor(@PathVariable String id) {
+        sensorRepository.deleteById(id);
     }
 
 }

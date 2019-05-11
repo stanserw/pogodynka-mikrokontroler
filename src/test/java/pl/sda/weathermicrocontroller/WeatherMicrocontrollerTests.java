@@ -1,4 +1,4 @@
-package pl.sda.weatherMicrocontroller;
+package pl.sda.weathermicrocontroller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

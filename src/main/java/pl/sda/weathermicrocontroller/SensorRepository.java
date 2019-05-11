@@ -1,4 +1,4 @@
-package pl.sda.weatherMicrocontroller;
+package pl.sda.weathermicrocontroller;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

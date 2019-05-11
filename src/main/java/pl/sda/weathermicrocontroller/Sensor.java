@@ -1,10 +1,10 @@
-package pl.sda.weatherMicrocontroller;
+package pl.sda.weathermicrocontroller;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * 1. tworzymy klasę Sensor, która zawiera pola
+ * 1. tworzymy klasę Sensor, która zawiera pola:
  * "id"- unikalny numer identyfikacyjny urządzenia,
  * "name" - nazwa urzadzenia,
  * "description" - do czego służy?,

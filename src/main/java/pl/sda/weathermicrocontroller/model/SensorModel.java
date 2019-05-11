@@ -1,4 +1,4 @@
-package pl.sda.weatherMicrocontroller.model;
+package pl.sda.weathermicrocontroller.model;
 
 /**
  * Tworzymy klasę modelową Sensora zawierającą pola:
