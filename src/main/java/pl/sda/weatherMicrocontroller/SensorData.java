@@ -1,5 +1,8 @@
 package pl.sda.weatherMicrocontroller;
 
+/**
+ * Tworzymy klasę SensorData -
+ */
 public class SensorData {
 
     private String name;

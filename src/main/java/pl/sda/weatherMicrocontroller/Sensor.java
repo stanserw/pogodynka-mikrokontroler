@@ -3,6 +3,14 @@ package pl.sda.weatherMicrocontroller;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * 1. tworzymy klasę Sensor, która zawiera pola
+ * "id"- unikalny numer identyfikacyjny urządzenia,
+ * "name" - nazwa urzadzenia,
+ * "description" - do czego służy?,
+ * "List<SensorData> sensorData" - lista zawierająca odczyty wartości,
+ * "LocalDateTime date" - data odczytu wartości
+ */
 public class Sensor implements Sensorable{
 
     private String id;
