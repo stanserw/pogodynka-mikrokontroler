@@ -27,7 +27,7 @@ public class SensorController {
         sensorRepository.save(sensor);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public Iterable<Sensor> getAllSensors() {
         return sensorRepository.findAll();
     }
