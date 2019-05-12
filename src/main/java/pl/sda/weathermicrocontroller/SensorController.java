@@ -11,7 +11,6 @@ import java.util.Optional;
 public class SensorController {
 
     static final String API_SENSOR_PATH = "/api/sensor";
-
     private SensorRepository sensorRepository;
 
     // Tworzymy konstruktor
