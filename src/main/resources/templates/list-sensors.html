@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista sensorów</title>
+</head>
+<body>
+
+<h3>Lista sensorów</h3>
+
+<table border="1">
+
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tempSensor : ${sensors}">
+        <td th:text="${tempSensor.id}" />
+        <td th:text="${tempSensor.name}" />
+        <td th:text="${tempSensor.description}" />
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

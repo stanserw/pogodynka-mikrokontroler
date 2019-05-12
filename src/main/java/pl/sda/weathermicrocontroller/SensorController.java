@@ -1,8 +1,10 @@
 package pl.sda.weathermicrocontroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -28,8 +30,14 @@ public class SensorController {
     }
 
     @GetMapping("/all")
-    public Iterable<Sensor> getAllSensors() {
-        return sensorRepository.findAll();
+    public String getAllSensors(Model model) {
+        //return sensorRepository.findAll();
+        List<Sensor> sensorList = sensorRepository.findAll();
+
+        // add to the Spring MVC model
+        model.addAttribute("sensors", sensorList);
+
+        return "list-sensors";
     }
 
     @GetMapping("/{id}")
@@ -43,7 +51,7 @@ public class SensorController {
     }
 
     @DeleteMapping
-    public void deleteAllSensors(){
+    public void deleteAllSensors() {
         sensorRepository.deleteAll();
     }
 
