@@ -6,22 +6,29 @@
 </head>
 <body>
 
-<h3>Lista sensorów</h3>
+<h2>Lista sensorów</h2>
+<hr>
 
 <table border="1">
 
     <thead>
     <tr>
         <th>Id</th>
-        <th>Name</th>
-        <th>Description</th>
+        <th>Nazwa</th>
+        <th>Opis</th>
+        <th>Pomiar</th>
+        <th>Mierzona wartość</th>
+        <th>Czas pomiaru</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="tempSensor : ${sensors}">
-        <td th:text="${tempSensor.id}" />
-        <td th:text="${tempSensor.name}" />
-        <td th:text="${tempSensor.description}" />
+    <tr th:each="tempSensor : ${allSensors}">
+    <td th:text="${tempSensor.id}">Id</td>
+    <td th:text="${tempSensor.sensorName}">Nazwa</td>
+    <td th:text="${tempSensor.description}">Opis</td>
+    <td th:text="${tempSensor.sensorData.get(0).name}">Pomiar</td>
+    <td th:text="${tempSensor.sensorData.get(0).value}">Wartość</td>
+    <td th:text="${tempSensor.date}">Czas pomiaru</td>
     </tr>
     </tbody>
 </table>
