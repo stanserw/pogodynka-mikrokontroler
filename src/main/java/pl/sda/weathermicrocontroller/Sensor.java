@@ -2,6 +2,7 @@ package pl.sda.weathermicrocontroller;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 1. tworzymy klasę Sensor, która zawiera pola:
@@ -68,6 +69,23 @@ public class Sensor implements Sensorable{
 
     public void setDate(LocalDateTime date) {
         this.date = date;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Sensor)) return false;
+        Sensor sensor = (Sensor) o;
+        return getId().equals(sensor.getId()) &&
+                getSensorName().equals(sensor.getSensorName()) &&
+                getDescription().equals(sensor.getDescription()) &&
+                getSensorData().equals(sensor.getSensorData()) &&
+                getDate().equals(sensor.getDate());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getSensorName(), getDescription(), getSensorData(), getDate());
     }
 
     @Override

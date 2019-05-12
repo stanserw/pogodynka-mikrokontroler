@@ -1,5 +1,7 @@
 package pl.sda.weathermicrocontroller;
 
+import java.util.Objects;
+
 /**
  * Tworzymy klasę SensorData -
  */
@@ -32,4 +34,17 @@ public class SensorData {
         this.value = value;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SensorData)) return false;
+        SensorData that = (SensorData) o;
+        return getName().equals(that.getName()) &&
+                getValue().equals(that.getValue());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getValue());
+    }
 }
