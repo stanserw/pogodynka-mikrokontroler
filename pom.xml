@@ -11,7 +11,7 @@
     <groupId>pl.sda</groupId>
     <artifactId>weather-microcontroller</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>weather-microcontroller</name>
+    <sensorName>weather-microcontroller</sensorName>
     <description>Final project for Spring Boot</description>
 
     <properties>

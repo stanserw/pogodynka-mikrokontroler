@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 1. tworzymy klasę Sensor, która zawiera pola:
  * "id"- unikalny numer identyfikacyjny urządzenia,
- * "name" - nazwa urzadzenia,
+ * "sensorName" - nazwa urzadzenia,
  * "description" - do czego służy?,
  * "List<SensorData> sensorData" - lista zawierająca odczyty wartości,
  * "LocalDateTime date" - data odczytu wartości
@@ -14,7 +14,7 @@ import java.util.List;
 public class Sensor implements Sensorable{
 
     private String id;
-    private String name;
+    private String sensorName;
     private String description;
     private List<SensorData> sensorData;
     private LocalDateTime date;
@@ -24,7 +24,7 @@ public class Sensor implements Sensorable{
 
     public Sensor(String id, String name, String description, List<SensorData> sensorData, LocalDateTime date) {
         this.id = id;
-        this.name = name;
+        this.sensorName = name;
         this.description = description;
         this.sensorData = sensorData;
         this.date = date;
@@ -38,12 +38,12 @@ public class Sensor implements Sensorable{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getSensorName() {
+        return sensorName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSensorName(String sensorName) {
+        this.sensorName = sensorName;
     }
 
     public String getDescription() {
