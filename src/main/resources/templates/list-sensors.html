@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista sensorów</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
 
-<h2>Lista sensorów</h2>
-<hr>
+    <h2>Lista sensorów</h2>
+    <hr>
 
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Nazwa</th>
-        <th>Opis</th>
-        <th>Pomiar</th>
-        <th>Mierzona wartość</th>
-        <th>Czas pomiaru</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="tempSensor : ${allSensors}">
-    <td th:text="${tempSensor.id}" />
-    <td th:text="${tempSensor.sensorName}" />
-    <td th:text="${tempSensor.description}" />
-    <td th:text="${tempSensor.sensorData.get(0).name}" />
-    <td th:text="${tempSensor.sensorData.get(0).value}" />
-    <td th:text="${tempSensor.date}" />
-    </tr>
-    </tbody>
-</table>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Nazwa</th>
+            <th>Opis</th>
+            <th>Pomiar</th>
+            <th>Zmierzona wartość</th>
+            <th>Czas pomiaru</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tempSensor : ${allSensors}">
+        <td th:text="${tempSensor.id}" />
+        <td th:text="${tempSensor.sensorName}" />
+        <td th:text="${tempSensor.description}" />
+        <td th:text="${tempSensor.sensorData.get(0).name}" />
+        <td th:text="${tempSensor.sensorData.get(0).value}" />
+        <td th:text="${tempSensor.date}" />
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
 
 </body>
 </html>
