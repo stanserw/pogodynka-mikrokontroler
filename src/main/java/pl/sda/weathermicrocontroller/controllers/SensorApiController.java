@@ -1,21 +1,23 @@
-package pl.sda.weathermicrocontroller;
+package pl.sda.weathermicrocontroller.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.sda.weathermicrocontroller.dao.Sensor;
+import pl.sda.weathermicrocontroller.repository.SensorRepository;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping(SensorController.API_SENSOR_PATH)
-public class SensorController {
+@RequestMapping(SensorApiController.API_SENSOR_PATH)
+public class SensorApiController {
 
     static final String API_SENSOR_PATH = "/api/sensor";
     private SensorRepository sensorRepository;
 
     // Tworzymy konstruktor
     @Autowired
-    public SensorController(SensorRepository sensorRepository) {
+    public SensorApiController(SensorRepository sensorRepository) {
         this.sensorRepository = sensorRepository;
     }
 

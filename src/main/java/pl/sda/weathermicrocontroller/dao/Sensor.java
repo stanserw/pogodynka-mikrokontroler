@@ -1,4 +1,4 @@
-package pl.sda.weathermicrocontroller;
+package pl.sda.weathermicrocontroller.dao;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Objects;
  * "List<SensorData> sensorData" - lista zawierająca odczyty wartości,
  * "LocalDateTime date" - data odczytu wartości
  */
-public class Sensor implements Sensorable{
+public class Sensor implements Sensorable {
 
     private String id;
     private String sensorName;
