@@ -33,14 +33,11 @@ public class SensorController {
     @GetMapping("/all")
     public String getAllSensors(Model model) {
         //return sensorRepository.findAll();
-        List<Sensor> sensorList = new ArrayList<>();
-        for (Sensor s: sensorRepository.findAll()) {
-            sensorList.add(s);
-        }
-//        sensorList.addAll(sensorRepository.findAll());
+//        List<Sensor> sensorList = new ArrayList<>();
+//        sensorList = sensorRepository.findAll();
 
         // add to the Spring MVC model
-        model.addAttribute("sensors", sensorList);
+        model.addAttribute("sensors", sensorRepository.findAll());
 
         return "list-sensors";
     }
