@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +33,11 @@ public class SensorController {
     @GetMapping("/all")
     public String getAllSensors(Model model) {
         //return sensorRepository.findAll();
-        List<Sensor> sensorList = sensorRepository.findAll();
+        List<Sensor> sensorList = new ArrayList<>();
+        for (Sensor s: sensorRepository.findAll()) {
+            sensorList.add(s);
+        }
+//        sensorList.addAll(sensorRepository.findAll());
 
         // add to the Spring MVC model
         model.addAttribute("sensors", sensorList);
