@@ -30,7 +30,7 @@ public class SensorApiController {
     }
 
     @GetMapping("/all")
-    public Iterable<Sensor> getAllSensors(Model model) {
+    public Iterable<Sensor> getAllSensors() {
         return sensorRepository.findAll();
     }
 
