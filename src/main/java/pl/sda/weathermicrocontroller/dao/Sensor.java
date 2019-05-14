@@ -1,5 +1,7 @@
 package pl.sda.weathermicrocontroller.dao;
 
+import org.springframework.data.annotation.Id;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -14,6 +16,7 @@ import java.util.Objects;
  */
 public class Sensor implements Sensorable {
 
+    @Id
     private String id;
     private String sensorName;
     private String description;
