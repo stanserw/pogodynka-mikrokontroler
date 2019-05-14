@@ -43,7 +43,7 @@ public class SensorController {
         sensorRepository.deleteById(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping(path = "/admin/sensor/delete")
     public void deleteAllSensors() {
         sensorRepository.deleteAll();
     }
