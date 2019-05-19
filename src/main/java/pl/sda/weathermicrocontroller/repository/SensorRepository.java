@@ -7,5 +7,4 @@ import pl.sda.weathermicrocontroller.dao.Sensor;
 @Repository
 public interface SensorRepository extends MongoRepository<Sensor, String> {
 
-    Sensor findBySensorName(String name);
 }

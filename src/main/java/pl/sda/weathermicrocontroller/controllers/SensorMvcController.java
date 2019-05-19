@@ -30,6 +30,6 @@ public class SensorMvcController {
         // add to the spring model
         listViewModel.addAttribute("allSensors", sensorList);
 
-        return "list-sensors";
+        return "list-sensors-readings";
     }
 }
