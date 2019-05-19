@@ -27,9 +27,11 @@
         </thead>
         <tbody>
         <tr th:each="tempSensor : ${allSensors}">
-        <td th:text="${tempSensor.id}" />
-        <td th:text="${tempSensor.sensorData.get(0).name}" />
-        <td th:text="${tempSensor.sensorData.get(0).value}" />
+        <td th:text="${tempSensor.idSensor}" />
+            <td th:text="${tempSensor.sensorData.get(0).name}" />
+            <td th:text="${tempSensor.sensorData.get(0).value}" />
+            <td th:text="${tempSensor.sensorData.get(1).name}" />
+            <td th:text="${tempSensor.sensorData.get(1).value}" />
         </tr>
         </tbody>
     </table>
