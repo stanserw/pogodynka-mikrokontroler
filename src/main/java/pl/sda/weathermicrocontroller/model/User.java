@@ -11,11 +11,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 public class User {
+
     @Id
     private ObjectId id;
-
     private String name;
-
     private String email;
+
 
 }
