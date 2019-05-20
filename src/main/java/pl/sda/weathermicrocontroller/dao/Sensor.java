@@ -1,5 +1,7 @@
 package pl.sda.weathermicrocontroller.dao;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -10,6 +12,7 @@ import java.util.Objects;
  */
 public class Sensor implements Sensorable {
 
+    @Id
     private String idSensor;
     private List<SensorData> sensorData;
 

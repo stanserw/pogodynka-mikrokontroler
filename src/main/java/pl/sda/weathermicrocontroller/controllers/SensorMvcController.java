@@ -1,12 +1,13 @@
 package pl.sda.weathermicrocontroller.controllers;
 
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.sda.weathermicrocontroller.dao.Sensor;
-import pl.sda.weathermicrocontroller.repository.SensorRepository;
+import pl.sda.weathermicrocontroller.model.SensorDataModel;
+import pl.sda.weathermicrocontroller.repository.SensorDataModelRepository;
 
 import java.util.List;
 
@@ -14,21 +15,21 @@ import java.util.List;
 @Controller
 public class SensorMvcController {
 
-    static final String APP_SENSOR_PATH = "/app/sensor";
-    private SensorRepository sensorRepository;
+    static final String APP_SENSOR_PATH = "/app/sensor/data";
+    private SensorDataModelRepository sensorDataModelRepository;
 
-    public SensorMvcController(SensorRepository sensorRepository) {
-        this.sensorRepository = sensorRepository;
+    public SensorMvcController(SensorDataModelRepository sensorDataModelRepository) {
+        this.sensorDataModelRepository = sensorDataModelRepository;
     }
 
     @GetMapping("/list")
     public String allSensorsView(Model listViewModel) {
 
         // get sensors from db
-        List<Sensor> sensorList = sensorRepository.findAll();
+        List<SensorDataModel> sensorDataList = sensorDataModelRepository.findAll(Sort.by("date").descending());
 
         // add to the spring model
-        listViewModel.addAttribute("allSensors", sensorList);
+        listViewModel.addAttribute("allSensors", sensorDataList);
 
         return "list-sensors-readings";
     }
