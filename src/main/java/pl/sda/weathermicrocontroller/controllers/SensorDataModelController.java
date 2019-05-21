@@ -20,7 +20,7 @@ public class SensorDataModelController {
     }
 
     @PostMapping
-    public void add(@RequestBody SensorDataModel sensorDataModel) {
+    public void addSensorDataModel(@RequestBody SensorDataModel sensorDataModel) {
         sensorDataModel.setDate(LocalDateTime.now());
         sensorDataModelRepository.save(sensorDataModel);
     }
