@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Aktualny pomiar</title>
+    <title>Najnowszy odczyt</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +14,7 @@
 <body>
 <div class="container">
 
-    <h2>Aktualny pomiar</h2>
+    <h2>Najnowszy odczyt</h2>
     <hr>
 
     <table class="table table-bordered table-striped">
@@ -23,13 +23,15 @@
             <th>Id czujnika</th>
             <th>Temperatura</th>
             <th>Wilgotność</th>
+            <th>Data odczytu</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="tempSensor : ${oneSensor}">
-        <td th:text="${tempSensor.idSensor}" />
-        <td th:text="${tempSensor.sensorData.get(0).value}" />
-        <td th:text="${tempSensor.sensorData.get(1).value}" />
+            <td th:text="${tempSensor.idSensor}" />
+            <td th:each="entry: ${tempSensor.sensorData}">
+                <span th:text="${entry.value}"></span>
+            <td th:text="${#temporals.format(tempSensor.date,'dd-MM-yyyy HH:mm:ss')}" />
         </tr>
         </tbody>
     </table>

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.sda.weathermicrocontroller.dao.Sensor;
 import pl.sda.weathermicrocontroller.repository.SensorRepository;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @RestController
@@ -25,6 +26,7 @@ public class SensorController {
      */
     @PostMapping
     public void Sensor(@RequestBody Sensor sensor) {
+        sensor.setDate(LocalDateTime.now());
         sensorRepository.save(sensor);
     }
 
