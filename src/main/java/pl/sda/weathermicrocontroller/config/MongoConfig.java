@@ -1,4 +1,4 @@
-package pl.sda.weathermicrocontroller;
+package pl.sda.weathermicrocontroller.config;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class MongoConfig {
 
     @Bean
-    public MongoTemplate mongoTemplate() throws Exception {
+    public MongoTemplate mongoTemplate() {
         return new MongoTemplate(mongo(), "weather");
     }
 

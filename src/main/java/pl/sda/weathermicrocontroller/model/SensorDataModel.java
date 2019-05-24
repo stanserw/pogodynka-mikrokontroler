@@ -24,16 +24,6 @@ public class SensorDataModel {
     HashMap<String, Double> values;
     LocalDateTime date;
 
-    public SensorDataModel() {
-    }
-
-    public SensorDataModel(String sensorId, HashMap<String, Double> values, LocalDateTime date) {
-        this.sensorId = sensorId;
-        this.values = values;
-        this.date = date;
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
