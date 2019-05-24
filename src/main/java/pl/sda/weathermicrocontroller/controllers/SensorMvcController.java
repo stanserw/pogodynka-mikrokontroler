@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.sda.weathermicrocontroller.dao.Sensor;
+import pl.sda.weathermicrocontroller.model.Sensor;
 import pl.sda.weathermicrocontroller.repository.SensorRepository;
 
 import java.util.List;

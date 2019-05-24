@@ -2,7 +2,7 @@ package pl.sda.weathermicrocontroller.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.sda.weathermicrocontroller.dao.Sensor;
+import pl.sda.weathermicrocontroller.model.Sensor;
 import pl.sda.weathermicrocontroller.repository.SensorRepository;
 
 import java.time.LocalDateTime;

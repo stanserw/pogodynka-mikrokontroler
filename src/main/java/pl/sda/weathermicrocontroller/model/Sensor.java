@@ -1,4 +1,4 @@
-package pl.sda.weathermicrocontroller.dao;
+package pl.sda.weathermicrocontroller.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * 1. tworzymy klasę Sensor, która zawiera pola:
@@ -18,12 +17,12 @@ import java.util.Objects;
 @Document
 @Getter
 @Setter
-public class Sensor implements Sensorable {
+public class Sensor {
 
     @Id
     private String idSensor;
     private List<SensorData> sensorData;
-    LocalDateTime date;
+    private LocalDateTime date;
 
     public Sensor() {
     }
@@ -39,9 +38,4 @@ public class Sensor implements Sensorable {
         this.sensorData = sensorData;
     }
 
-
-    @Override
-    public void readOut() {
-
-    }
 }

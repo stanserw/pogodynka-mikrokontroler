@@ -1,4 +1,4 @@
-package pl.sda.weathermicrocontroller.dao;
+package pl.sda.weathermicrocontroller.model;
 
 import java.util.Objects;
 
