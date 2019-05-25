@@ -10,10 +10,10 @@ import pl.sda.weathermicrocontroller.model.SensorModel;
 import pl.sda.weathermicrocontroller.repository.SensorModelRepository;
 
 @Controller
-@RequestMapping(SensorModelController.APP_SENSORS_PATH)
+@RequestMapping(SensorModelController.API_SENSORS_PATH)
 public class SensorModelController {
 
-    static final String APP_SENSORS_PATH = "/modelsensors";
+    static final String API_SENSORS_PATH = "/api/modelsensors";
     private SensorModelRepository sensorModelRepository;
 
     @Autowired

@@ -1,4 +1,4 @@
-package pl.sda.weathermicrocontroller.controllers;
+package pl.sda.weathermicrocontroller.mvc;
 
 
 import org.springframework.data.domain.Sort;
@@ -11,14 +11,14 @@ import pl.sda.weathermicrocontroller.repository.SensorDataModelRepository;
 
 import java.util.List;
 
-@RequestMapping(SensorMvcDataModelController.APP_SENSOR_PATH)
+@RequestMapping(SensorDataModelMvcController.APP_SENSOR_PATH)
 @Controller
-public class SensorMvcDataModelController {
+public class SensorDataModelMvcController {
 
     static final String APP_SENSOR_PATH = "/app/sensor/data";
     private SensorDataModelRepository sensorDataModelRepository;
 
-    public SensorMvcDataModelController(SensorDataModelRepository sensorDataModelRepository) {
+    public SensorDataModelMvcController(SensorDataModelRepository sensorDataModelRepository) {
         this.sensorDataModelRepository = sensorDataModelRepository;
     }
 

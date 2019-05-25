@@ -1,4 +1,4 @@
-package pl.sda.weathermicrocontroller.controllers;
+package pl.sda.weathermicrocontroller.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

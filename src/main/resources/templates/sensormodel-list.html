@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista czujników</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <h2>Lista czujników</h2>
+    <hr>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Opis</th>
+                <th>Szerokość geograficzna</th>
+                <th>Długość geograficzna</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="tempSensorModel : ${sensormodels}">
+                <td th:text="${tempSensorModel.getId()}" />
+                <td th:text="${tempSensorModel.getName()}" />
+                <td th:text="${tempSensorModel.getDescription()}" />
+                <td th:text="${tempSensorModel.getLatitude()}" />
+                <td th:text="${tempSensorModel.getLongitude()}" />
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+</body>
+</html>
