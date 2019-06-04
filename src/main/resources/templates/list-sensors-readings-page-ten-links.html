@@ -13,10 +13,8 @@
 </head>
 <body>
 <div class="container">
-
     <h2>Lista odczytów</h2>
     <hr>
-
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
@@ -33,23 +31,33 @@
                 <span th:text="${entry.value}"></span>
             </td>
             <td th:text="${#temporals.format(tempSensor.date,'dd-MM-yyyy HH:mm:ss')}"/>
-
         </tr>
         </tbody>
     </table>
-
-
 </div>
-
 
 <!-- sensors pagination -->
 <nav aria-label="Pagination" th:if="${allSensors.totalPages gt 0}">
     <ul class="pagination justify-content-center font-weight-medium">
         <li class="page-item" th:classappend="${allSensors.number eq 0} ? 'disabled'">
+            <a class="page-link svg-icon" th:href="@{/app/sensor/data/pagelist?page={id}(id=1)}"
+               aria-label="Start"
+               title="Strona startowa" rel="tooltip">
+                <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">Start</span>
+            </a>
+        </li>
+        <li class="page-item" th:classappend="${allSensors.number - 10 lt 1} ? 'disabled'">
+            <a class="page-link svg-icon" th:href="@{/app/sensor/data/pagelist?page={id}(id=${allSensors.number - 10})}"
+               aria-label="Previous Pages"
+               title="Poprzednie strony" rel="tooltip">
+                <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">&laquo;&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item" th:classappend="${allSensors.number eq 0} ? 'disabled'">
             <a class="page-link svg-icon"
                th:href="@{/app/sensor/data/pagelist?page={id}(id=${allSensors.number lt 2 ? 1 : allSensors.number})}"
                aria-label="Previous"
-               title="Previous Page" rel="tooltip">
+               title="Poprzednia strona" rel="tooltip">
                 <span aria-hidden="true" data-feather="chevrons-left" width="20" height="20">&laquo;</span>
             </a>
         </li>
@@ -59,19 +67,27 @@
                th:title="${'Page '+ i}"
                rel="tooltip"></a>
         </li>
-        <li class="page-item disabled" th:if="${allSensors.number + 10 < allSensors.totalPages}">
-            <a class="page-link svg-icon" href="#">
-                <span data-feather="more-horizontal" width="20" height="20"></span>
-            </a>
-        </li>
         <li class="page-item" th:classappend="${allSensors.number + 1 eq allSensors.totalPages} ? 'disabled'">
             <a class="page-link svg-icon" th:href="@{/app/sensor/data/pagelist?page={id}(id=${allSensors.number + 2})}"
                aria-label="Next"
-               title="Next Page" rel="tooltip">
+               title="Następna strona" rel="tooltip">
                 <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">&raquo;</span>
+            </a>
+        </li>
+        <li class="page-item" th:classappend="${allSensors.number + 10 ge allSensors.totalPages} ? 'disabled'">
+            <a class="page-link svg-icon" th:href="@{/app/sensor/data/pagelist?page={id}(id=${allSensors.number + 10})}"
+               aria-label="Next Pages"
+               title="Następne strony" rel="tooltip">
+                <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">&raquo;&raquo;</span>
+            </a>
+        </li>
+        </li>
+        <li class="page-item" th:classappend="${allSensors.number + 10 eq allSensors.totalPages} ? 'disabled'">
+            <a class="page-link svg-icon" th:href="@{/app/sensor/data/pagelist?page={id}(id=${allSensors.totalPages})}"
+               aria-label="End"
+            title="Strona końcowa" rel="tooltip">
+            <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">Koniec</span>
             </a>
         </li>
     </ul>
 </nav>
-</body>
-</html>
