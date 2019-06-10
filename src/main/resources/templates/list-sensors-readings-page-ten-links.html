@@ -82,8 +82,8 @@
             </a>
         </li>
         </li>
-        <li class="page-item" th:classappend="${allSensors.number + 10 eq allSensors.totalPages} ? 'disabled'">
-            <a class="page-link svg-icon" th:href="@{/app/sensor/data/pagelist?page={id}(id=${allSensors.totalPages})}"
+        <li class="page-item" th:classappend="${allSensors.number + 10 ge allSensors.totalPages} ? 'disabled'">
+            <a class="page-link svg-icon" th:href="@{/app/sensor/data/pagelist?page={id}(id=${allSensors.totalPages - 9})}"
                aria-label="End"
             title="Strona końcowa" rel="tooltip">
             <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">Koniec</span>
