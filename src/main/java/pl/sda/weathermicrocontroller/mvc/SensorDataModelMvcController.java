@@ -40,7 +40,7 @@ public class SensorDataModelMvcController {
     public String allSensorsPageView(HttpServletRequest request, Model model) {
 
         int page = 0; //default page number is 0 (yes it is weird)
-        int size = 10; //default page size is 10
+        int size = 10; //default page size 10
 
         if (request.getParameter("page") != null && !request.getParameter("page").isEmpty()) {
             page = Integer.parseInt(request.getParameter("page")) - 1;

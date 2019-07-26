@@ -26,8 +26,8 @@
         </thead>
         <tbody>
         <tr th:each="tempUser : ${users}">
-            <td th:text="${tempUser.getName()}" />
-            <td th:text="${tempUser.getEmail()}" />
+            <td th:text="${tempUser.getName()}"></td>
+            <td th:text="${tempUser.getEmail()}"></td>
         </tr>
         </tbody>
     </table>

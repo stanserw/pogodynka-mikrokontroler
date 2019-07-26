@@ -30,11 +30,11 @@
         </thead>
         <tbody>
             <tr th:each="tempSensorModel : ${sensormodels}">
-                <td th:text="${tempSensorModel.getId()}" />
-                <td th:text="${tempSensorModel.getName()}" />
-                <td th:text="${tempSensorModel.getDescription()}" />
-                <td th:text="${tempSensorModel.getLatitude()}" />
-                <td th:text="${tempSensorModel.getLongitude()}" />
+                <td th:text="${tempSensorModel.getId()}"></td>
+                <td th:text="${tempSensorModel.getName()}"></td>
+                <td th:text="${tempSensorModel.getDescription()}"></td>
+                <td th:text="${tempSensorModel.getLatitude()}"></td>
+                <td th:text="${tempSensorModel.getLongitude()}"></td>
             </tr>
         </tbody>
     </table>

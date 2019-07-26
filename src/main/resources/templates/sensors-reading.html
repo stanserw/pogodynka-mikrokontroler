@@ -28,10 +28,10 @@
         </thead>
         <tbody>
         <tr th:each="tempSensor : ${oneSensor}">
-            <td th:text="${tempSensor.idSensor}" />
+            <td th:text="${tempSensor.idSensor}"></td>
             <td th:each="entry: ${tempSensor.sensorData}">
                 <span th:text="${entry.value}"></span>
-            <td th:text="${#temporals.format(tempSensor.date,'dd-MM-yyyy HH:mm:ss')}" />
+            <td th:text="${#temporals.format(tempSensor.date,'dd-MM-yyyy HH:mm:ss')}"></td>
         </tr>
         </tbody>
     </table>
