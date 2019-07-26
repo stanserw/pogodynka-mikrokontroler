@@ -47,7 +47,7 @@
                 <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">Start</span>
             </a>
         </li>
-        <li class="page-item" th:classappend="${allSensors.number - 5 lt 1} ? 'disabled'">
+        <li class="page-item" th:classappend="${allSensors.number - 5 lt 0} ? 'disabled'">
             <a class="page-link svg-icon" th:href="@{'/app/sensor/data/pagelist?page={id}'(id=${allSensors.number - 4})}"
                aria-label="Previous Pages"
                title="Poprzednie strony" rel="tooltip">
