@@ -14,7 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Double latitude - równoleżnik (do określenia lokalizacji Sensora)
  * Double longitude - południk (do określenia lokalizacji Sensora)
  */
-
 @Document
 @Getter
 @Setter

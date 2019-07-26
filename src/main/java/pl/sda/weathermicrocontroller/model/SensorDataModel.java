@@ -14,7 +14,6 @@ import java.util.Objects;
  * HashMap<String, Double> values - typ danych, wartość;
  * LocalDateTime date - data i czas odczytu danych;
  */
-
 @Document
 @Getter
 @Setter
